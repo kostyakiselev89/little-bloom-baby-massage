@@ -4,16 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Little Bloom Baby Massage</title>
-  <meta name="description" content="Gentle baby massage sessions in a warm and welcoming environment. Discover our services and get in touch.">
+
+  <title>Little Bloom Baby Massage | Demo Website</title>
+  <meta name="description" content="A demonstration website concept for a gentle baby massage service. Explore sample services and learn how to contact a provider.">
 
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     :root {
       --cream: #f8f6f0;
       --sage: #687d63;
@@ -21,6 +16,13 @@
       --text: #555b52;
       --white: #ffffff;
       --light-sage: #e9eee5;
+      --border: #e6e4dc;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     html {
@@ -34,6 +36,11 @@
       line-height: 1.7;
     }
 
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
     a {
       color: inherit;
     }
@@ -43,10 +50,17 @@
       margin: 0 auto;
     }
 
+    .demo-banner {
+      padding: 10px 5%;
+      background: #e8eddf;
+      color: var(--dark);
+      text-align: center;
+      font-size: 13px;
+    }
+
     header {
-      background: var(--cream);
       padding: 18px 0;
-      border-bottom: 1px solid #e6e4dc;
+      border-bottom: 1px solid var(--border);
     }
 
     .nav {
@@ -58,7 +72,8 @@
 
     .logo {
       color: var(--dark);
-      font-size: 21px;
+      font-family: Georgia, serif;
+      font-size: 22px;
       font-weight: bold;
       text-decoration: none;
     }
@@ -66,7 +81,7 @@
     nav {
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 18px;
     }
 
     nav a {
@@ -99,14 +114,16 @@
       line-height: 1.25;
     }
 
-    h1 {
+    h1, h2 {
       font-family: Georgia, serif;
+    }
+
+    h1 {
       font-size: clamp(36px, 5vw, 58px);
       margin: 18px 0;
     }
 
     h2 {
-      font-family: Georgia, serif;
       font-size: clamp(28px, 4vw, 38px);
       margin-bottom: 18px;
     }
@@ -124,23 +141,23 @@
       width: 100%;
       height: 420px;
       object-fit: cover;
+      object-position: center;
       border-radius: 48% 48% 12px 12px;
       background: var(--light-sage);
     }
 
     .button {
       display: inline-block;
-      background: var(--sage);
-      color: var(--white);
       padding: 13px 23px;
-      border-radius: 7px;
-      text-decoration: none;
-      font-weight: bold;
       margin-top: 10px;
       border: 2px solid var(--sage);
-      cursor: pointer;
-      font: inherit;
+      border-radius: 7px;
+      background: var(--sage);
+      color: var(--white);
       font-weight: bold;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.2s ease;
     }
 
     .button:hover {
@@ -149,13 +166,9 @@
     }
 
     .button-outline {
+      margin-left: 8px;
       background: transparent;
       color: var(--sage);
-      margin-left: 8px;
-    }
-
-    .button-outline:hover {
-      color: var(--white);
     }
 
     section {
@@ -163,7 +176,8 @@
       scroll-margin-top: 20px;
     }
 
-    .about {
+    .about,
+    .benefits {
       background: var(--light-sage);
     }
 
@@ -179,13 +193,13 @@
       height: 350px;
       object-fit: cover;
       border-radius: 12px;
-      background: #dce4d6;
+      background: var(--light-sage);
     }
 
     .section-heading {
-      text-align: center;
       max-width: 650px;
       margin: 0 auto 35px;
+      text-align: center;
     }
 
     .services-grid {
@@ -195,31 +209,34 @@
     }
 
     .service-card {
-      background: var(--white);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
       padding: 28px;
-      border-radius: 12px;
       border: 1px solid #ecebe5;
+      border-radius: 12px;
+      background: var(--white);
+    }
+
+    .service-card .button {
+      margin-top: auto;
     }
 
     .service-icon {
-      font-size: 32px;
       margin-bottom: 12px;
+      font-size: 32px;
     }
 
     .price {
-      color: var(--sage);
-      font-size: 24px;
-      font-weight: bold;
       margin: 15px 0 5px;
+      color: var(--sage);
+      font-size: 22px;
+      font-weight: bold;
     }
 
     .note {
-      font-size: 13px;
       color: #777c73;
-    }
-
-    .benefits {
-      background: var(--light-sage);
+      font-size: 13px;
     }
 
     .benefits-grid {
@@ -229,21 +246,17 @@
       text-align: center;
     }
 
-    .benefit {
-      padding: 10px;
-    }
-
     .faq-list {
       max-width: 750px;
       margin: 0 auto;
     }
 
     details {
-      background: var(--white);
-      padding: 20px;
-      border-radius: 8px;
       margin-bottom: 12px;
+      padding: 20px;
       border: 1px solid #e9e7df;
+      border-radius: 8px;
+      background: var(--white);
     }
 
     summary {
@@ -270,9 +283,13 @@
       color: #e4e8df;
     }
 
+    .contact .eyebrow {
+      color: #d7e2ce;
+    }
+
     .contact .button {
-      background: var(--white);
       border-color: var(--white);
+      background: var(--white);
       color: var(--dark);
     }
 
@@ -280,10 +297,19 @@
       background: var(--light-sage);
     }
 
+    .contact .note {
+      margin-top: 18px;
+      color: #e4e8df;
+    }
+
     footer {
-      text-align: center;
       padding: 24px 0;
+      text-align: center;
       font-size: 13px;
+    }
+
+    footer p {
+      margin-bottom: 5px;
     }
 
     @media (max-width: 760px) {
@@ -327,10 +353,24 @@
         margin-left: 0;
       }
     }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .button {
+        transition: none;
+      }
+    }
   </style>
 </head>
 
 <body>
+
+  <div class="demo-banner">
+    DEMO WEBSITE — Sample content for design demonstration only.
+  </div>
 
   <header>
     <div class="container nav">
@@ -351,14 +391,17 @@
       <div>
         <p class="eyebrow">Gentle care for little ones</p>
         <h1>A Little Touch of Love</h1>
+
         <p>
-          Discover a calm and caring space where parents
+          Discover a calm and welcoming space where parents
           and babies can enjoy peaceful moments together.
         </p>
+
         <p>
-          Explore our baby massage sessions and get in touch
-          to learn more.
+          Explore our sample services and get in touch
+          to learn more about a possible session.
         </p>
+
         <a class="button" href="#contact">Book a Session</a>
         <a class="button button-outline" href="#services">Our Services</a>
       </div>
@@ -366,7 +409,7 @@
       <img
         class="hero-image"
         src="https://images.unsplash.com/photo-1492725764893-90b379c2b6e7?auto=format&fit=crop&w=1200&q=85"
-        alt="A warm family moment"
+        alt="A family enjoying a warm moment together"
       >
     </div>
 
@@ -375,21 +418,24 @@
         <img
           class="about-image"
           src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=900&q=80"
-          alt="A family sharing time together"
+          alt="A family spending time together"
           loading="lazy"
         >
 
         <div>
           <p class="eyebrow">Welcome to Little Bloom</p>
           <h2>Care, Comfort and Connection</h2>
+
           <p>
             Every family deserves a welcoming space to slow down
             and enjoy time together.
           </p>
+
           <p>
-            Our sample website introduces a gentle, family-focused
-            baby massage service in a warm and friendly setting.
+            This sample website presents a family-focused
+            baby massage service in a warm and friendly style.
           </p>
+
           <a class="button" href="#contact">Get in Touch</a>
         </div>
       </div>
@@ -401,51 +447,61 @@
           <p class="eyebrow">How we can help</p>
           <h2>Our Services</h2>
           <p>
-            Choose a session that suits your family's needs.
+            Explore these example sessions and ask the provider
+            about available options.
           </p>
         </div>
 
         <div class="services-grid">
           <article class="service-card">
-            <div class="service-icon">🌼</div>
+            <div class="service-icon" aria-hidden="true">🌼</div>
             <h3>Baby Massage</h3>
+
             <p>
-              A gentle introductory session for parents
-              interested in learning about baby massage.
+              An introductory session for parents interested
+              in learning about gentle baby massage.
             </p>
-            <p class="price">€35</p>
-            <p class="note">45-minute sample session</p>
+
+            <p class="price">Price on request</p>
+            <p class="note">Example session: 45 minutes</p>
+
             <a class="button" href="#contact">Enquire Now</a>
           </article>
 
           <article class="service-card">
-            <div class="service-icon">🤍</div>
+            <div class="service-icon" aria-hidden="true">🤍</div>
             <h3>Parent & Baby</h3>
+
             <p>
-              A relaxed session designed to help parents
-              explore gentle touch and bonding activities.
+              A relaxed session where parents can explore
+              gentle touch and bonding activities.
             </p>
-            <p class="price">€45</p>
-            <p class="note">60-minute sample session</p>
+
+            <p class="price">Price on request</p>
+            <p class="note">Example session: 60 minutes</p>
+
             <a class="button" href="#contact">Enquire Now</a>
           </article>
 
           <article class="service-card">
-            <div class="service-icon">🌿</div>
+            <div class="service-icon" aria-hidden="true">🌿</div>
             <h3>Private Session</h3>
+
             <p>
-              A more personal introduction for a family
-              who prefers an individual appointment.
+              An individual session for a family interested
+              in a more personal introduction.
             </p>
-            <p class="price">€50</p>
-            <p class="note">60-minute sample session</p>
+
+            <p class="price">Price on request</p>
+            <p class="note">Example session: 60 minutes</p>
+
             <a class="button" href="#contact">Enquire Now</a>
           </article>
         </div>
 
-        <p class="note" style="text-align:center; margin-top:24px;">
-          This is a fictional demonstration. Prices and services
-          are examples, not a real offer.
+        <p class="note" style="text-align: center; margin-top: 24px;">
+          Services and durations are illustrative examples.
+          Confirm all details with the real provider before publishing.
         </p>
       </div>
     </section>
@@ -455,25 +511,29 @@
         <div class="section-heading">
           <p class="eyebrow">Our approach</p>
           <h2>A Welcoming Experience</h2>
+          <p>
+            A thoughtful design focused on clear information
+            and a friendly first impression.
+          </p>
         </div>
 
         <div class="benefits-grid">
           <div class="benefit">
-            <div class="service-icon">🕊️</div>
+            <div class="service-icon" aria-hidden="true">🕊️</div>
             <h3>A Calm Space</h3>
             <p>A warm and relaxed environment for families.</p>
           </div>
 
           <div class="benefit">
-            <div class="service-icon">🤲</div>
+            <div class="service-icon" aria-hidden="true">🤲</div>
             <h3>Gentle Guidance</h3>
-            <p>Clear explanations and a supportive approach.</p>
+            <p>Clear information and a supportive approach.</p>
           </div>
 
           <div class="benefit">
-            <div class="service-icon">💚</div>
+            <div class="service-icon" aria-hidden="true">💚</div>
             <h3>Family Focused</h3>
-            <p>Time to ask questions and explore your options.</p>
+            <p>Space to ask questions before arranging a session.</p>
           </div>
         </div>
       </div>
@@ -488,33 +548,35 @@
 
         <div class="faq-list">
           <details>
-            <summary>How do I book a session?</summary>
+            <summary>How do I enquire about a session?</summary>
             <p>
-              Use the contact details below to ask about availability.
-              This demonstration does not have a live booking system.
+              Use the contact section to find out how to reach
+              the provider. This demonstration does not have
+              a live booking system.
             </p>
           </details>
 
           <details>
             <summary>What should I bring?</summary>
             <p>
-              Ask your provider what to bring. They can explain
-              what is appropriate for the particular session.
+              Ask the provider what to bring and what is
+              appropriate for the particular session.
             </p>
           </details>
 
           <details>
             <summary>Can I ask questions before booking?</summary>
             <p>
-              Absolutely. Contact the provider before arranging
-              a session and discuss any concerns.
+              Yes. Contact the provider to discuss the session
+              and any questions you may have beforehand.
             </p>
           </details>
 
           <details>
-            <summary>Is baby massage medical treatment?</summary>
+            <summary>Is baby massage a medical treatment?</summary>
             <p>
-              No. A massage session is not a substitute for
+              This website does not make medical claims.
+              Baby massage is not a substitute for professional
               medical advice or treatment. Consult a qualified
               healthcare professional if you have concerns
               about your baby's health.
@@ -528,19 +590,20 @@
       <div class="container">
         <p class="eyebrow">Let's connect</p>
         <h2>We'd Love to Hear From You</h2>
+
         <p>
-          Interested in learning more? Get in touch to discuss
-          services and possible appointment times.
+          Interested in learning more? Contact the provider
+          to ask about services and possible appointment times.
         </p>
-        <a
-          class="button"
-          href="mailto:hello@example.com?subject=Baby%20Massage%20Enquiry"
-        >
-          Email Us
-        </a>
-        <p class="note" style="margin-top:18px;">
-          Demo contact: hello@example.com — replace this with
-          the real business email before publishing.
+
+        <p>
+          <strong>Demo contact details have not been added.</strong>
+        </p>
+
+        <p class="note">
+          Before this website is used for a real business,
+          replace this section with the owner's verified
+          contact details and agree on how enquiries will be handled.
         </p>
       </div>
     </section>
@@ -548,8 +611,8 @@
 
   <footer>
     <div class="container">
-      <p>© 2026 Little Bloom Baby Massage · Demo Website</p>
-      <p>Made with care 🌿</p>
+      <p>© 2026 Little Bloom Baby Massage</p>
+      <p>Demonstration website concept · Sample content only</p>
     </div>
   </footer>
 
